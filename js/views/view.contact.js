@@ -37,12 +37,16 @@ var Contact = {
 
 				$.ajax({
 					type: "POST",
-					url: "php/contact-form.php",
+					url: "https://api.sendgrid.com/v3/mail/send",
+					headers: {
+						"Authorization": "Bearer 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",
+						"Content-Type": "application/json"
+					},
 					data: {
-						"name": $("#contactForm #name").val(),
-						"email": $("#contactForm #email").val(),
-						"subject": $("#contactForm #subject").val(),
-						"message": $("#contactForm #message").val()
+						"personalizations":  [{"to": [{"email": "test@example.com"}]}],
+						"from": {"email": "test@example.com"},
+						"subject": "Sending with SendGrid is Fun",
+						"content": [{"type": "text/plain", "value": "and easy to do anywhere, even with cURL"}]
 					},
 					dataType: "json",
 					success: function (data) {
