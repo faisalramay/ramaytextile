@@ -43,8 +43,8 @@ var Contact = {
 						"Content-Type": "application/json"
 					},
 					data: {
-						"personalizations":  [{"to": [{"email": "test@example.com"}]}],
-						"from": {"email": "test@example.com"},
+						"personalizations":  [{"to": [{"email": "faisalramay@gmail.com"}]}],
+						"from": {"email": "faisal@ramaytextile.com"},
 						"subject": "Sending with SendGrid is Fun",
 						"content": [{"type": "text/plain", "value": "and easy to do anywhere, even with cURL"}]
 					},
